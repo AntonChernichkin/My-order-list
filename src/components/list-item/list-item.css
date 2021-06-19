@@ -1,0 +1,29 @@
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    border: 0.5px double black;
+    margin: 1px;
+    padding: 3px
+}
+
+.list-item span {
+    display: block;
+}
+
+.list-item.important span {
+    color:tomato;
+}
+
+.list-item.important .bi-exclamation-circle-fill {
+    color: tomato;
+}
+
+.list-item.check .bi-check-circle-fill {
+    color: rgb(11, 131, 11);
+}
+
+.list-item .list-item__block {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+}

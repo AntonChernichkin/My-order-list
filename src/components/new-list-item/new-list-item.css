@@ -1,0 +1,19 @@
+.new-list-item input {
+    width: 80%;
+    margin: 0;
+    /* padding: 0; */
+}
+
+.new-list-item button {
+    width: 20%;
+    margin: 0;
+}
+
+.new-list-item {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
