@@ -39,7 +39,7 @@ class NewListItem extends React.Component {
                     onChange={this.onValueChange}
                     value = {this.state.textValue}
                 />
-                <button type = "submit">
+                <button type = "submit" className = 'btn btn-primary'>
                 Добавить
                 </button>
             </form>

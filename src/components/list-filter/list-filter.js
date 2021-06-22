@@ -25,11 +25,11 @@ class ListFilter extends React.Component {
     render() {
         const buttons = this.buttons.map(({name, label}) => {
             const active = this.props.filter === name;
-            const newClass = active ? 'btn-active' : '';
+            const newClass = active ? 'btn-primary' : 'btn-outline-primary';
             return (
                 <button 
                     key = {name} 
-                    className = {`${newClass}`} 
+                    className = {`btn ${newClass}`} 
                     type="button"
                     onClick= {() => this.props.onFilterSelect(name)}>
                         {label}
