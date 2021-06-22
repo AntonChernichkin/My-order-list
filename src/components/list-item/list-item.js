@@ -1,56 +1,57 @@
 import React, {Component} from 'react';
 
-import './list-item.css'
+import './list-item.sass'
 
 
 export default class ListItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            important: false,
-            check: false
-        }
-        this.addImportant = this.addImportant.bind(this);
-        this.addCheck = this.addCheck.bind(this);
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         important: false,
+    //         check: false
+    //     }
+    //     this.addImportant = this.addImportant.bind(this);
+    //     this.addCheck = this.addCheck.bind(this);
+    // }
 
-    addImportant() {
-        this.setState(({important}) => ({
-            important: !important
-        }))
-    }
+    // addImportant() {
+    //     this.setState(({important}) => ({
+    //         important: !important
+    //     }))
+    // }
 
-    addCheck() {
-        this.setState(({check}) => ({
-            check: !check
-        }))
-    }
+    // addCheck() {
+    //     this.setState(({check}) => ({
+    //         check: !check
+    //     }))
+    // }
 
     render() {
-        const {label, key} = this.props;
-        const {important, check} = this.state;
+        const {label, key, important, check, onDelete, onImportant, onCheck} = this.props;
+        // const {important, check} = this.state;
         let style = "list-item" ,
             styleCheck = 'bi bi-check-circle',
             styleExclamation = 'bi bi-exclamation-lg'
+        
+        if (check) {
+            style += " check";
+            styleCheck = "bi bi-check-circle-fill"
+        }
 
         if (important) {
             style += " important";
             styleExclamation = 'bi bi-exclamation-circle-fill';
         }
 
-        if (check) {
-            style += " check";
-            styleCheck = "bi bi-check-circle-fill"
-        }
 
         return(
             <li className = {style} 
             key = {key}>
-                <span onClick = {this.addCheck}>{label}</span>
+                <span onClick = {onCheck}>{label}</span>
                 <div className = "list-item__block">
-                    <button onClick={this.addImportant}><i class={styleExclamation}></i></button>
-                    <button><i class="bi bi-trash"></i></button>
-                    <i class={styleCheck}></i>
+                    <button onClick={onImportant}><i class={styleExclamation}></i></button>
+                    <button onClick={onDelete}><i class="bi bi-trash"></i></button>
+                    <i onClick = {onCheck} class={styleCheck}></i>
                 </div>
             </li>
         )

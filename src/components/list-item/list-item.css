@@ -8,6 +8,7 @@
 
 .list-item span {
     display: block;
+    cursor: pointer;
 }
 
 .list-item.important span {
@@ -20,6 +21,10 @@
 
 .list-item.check .bi-check-circle-fill {
     color: rgb(11, 131, 11);
+}
+
+.list-item.check span {
+    text-decoration: line-through;
 }
 
 .list-item .list-item__block {
